@@ -283,13 +283,13 @@ def perspective_tansform(img):
 
 ```python
 left_cur, right_cur, ctb = radius_curvature(unwarped_road, left_fit_new, right_fit_new, left_lane_inds2, right_lane_inds2)
-print('radius of curvature: %.3f m, %.3fm' % (left_cur, right_cur))
+print('radius of curvature: %.3f m, %.3f m' % (left_cur, right_cur))
 print('radius of curvature: %.3f m' % ((left_cur + right_cur)/2))
 print('center: %.3f m' % (ctb))
 ```
 
 ```python
-radius of curvature: 2186.001 m, 1305.509m
+radius of curvature: 2186.001 m, 1305.509 m
 radius of curvature: 1745.755 m
 center: -0.133 m
 ```
@@ -466,7 +466,6 @@ def image_process(img):
 
 ```python
 test_image = mpimg.imread('./test_images/challenge01.jpg')
-
 result = image_process(test_image)
 plt.figure(figsize=(16,9))
 plt.imshow(result)
