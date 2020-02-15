@@ -94,22 +94,9 @@ def cal_undistort(img):
 
 ### 1.4 Apply the distortion correction to a chessboard image
 
-```python
-camera_calibration()
-# undistort chessboard image
-cb_img = mpimg.imread('./camera_cal/calibration01.jpg')
-undistorted_chessboard = cal_undistort(cb_img)
-```
-
 ![undistorted_chessboard](./output_images/undistorted_chessboard.jpg)
 
 ### 1.5 Apply the distortion correction to a road image
-
-```python
-# undistort road image
-road_img = mpimg.imread('./test_images/challenge02.jpg')
-undistorted_road_img = cal_undistort(road_img)
-```
 
 ![undistorted_road](./output_images/undistorted_road.jpg)
 
@@ -274,12 +261,11 @@ def perspective_tansform(img):
 ### 4.2 Radius of curvature of the lane
 
 1. Determine the meters per pixel in y/x dimension.
-
 2. Fit new polynomials to x,y in real world space.
-
 3. Calculate the new radius of curvature which is in meters.
-
 4. Calculate the position of the vehicle based on the center of the lane.
+
+For example:
 
 ```python
 left_cur, right_cur, ctb = radius_curvature(unwarped_road, left_fit_new, right_fit_new, left_lane_inds2, right_lane_inds2)
@@ -467,8 +453,6 @@ def image_process(img):
 ```python
 test_image = mpimg.imread('./test_images/challenge01.jpg')
 result = image_process(test_image)
-plt.figure(figsize=(16,9))
-plt.imshow(result)
 ```
 
 ![test_image](./output_images/test_image.jpg)
